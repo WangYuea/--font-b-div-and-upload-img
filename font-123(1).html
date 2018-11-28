@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js实现textarea选中文字并加粗</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <style>
+        .ones{
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div contenteditable="true" class='ones'></div>
+<a href='#' class='clicks' data-com='bold' onclick="changeStyle(this.dataset)">click</a>
+<div contenteditable="true" class='ones'></div>
+<span class='clicks' data-com='bold' onclick="changeStyle(this.dataset)">click</span>
+<script src='./jquery-3.3.1.min.js'></script>
+
+<script>
+    // const changeStyle = (data) => {
+    //     console.log(data,'data')
+    //     data.value? document.execCommand(data.com, false, data.value):document.execCommand(data.com, false, null)
+    // }
+    function changeStyle (data){
+        console.log(data)
+        document.execCommand(data.com, false, null)
+    }
+    // $('.clicks').click(function (data) {
+    //     document.execCommand(data.com, false, null)
+    // })
+</script>
+</body>
+</html>
